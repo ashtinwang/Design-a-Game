@@ -1,0 +1,17 @@
+1.  Each character will be its own object and the enemies will all be their own objects 
+  - the characters all have different skills 
+    - attack, defense, hp --> each features of the characters 
+  - the enemies are controlled by the computer and sent out in waves 
+    - the enemies all have a strength 
+  - there is an upgrade feature 
+    - the user can choose upgrades at the end of each round 
+  - time will be tracked as a variable 
+  - gain points from defeating enemies 
+      - score should also be a variable that restarts each game 
+      - but no information as to how they defeat enemies 
+      - but 1 point per enemy at the most basic enemy strength and it increases (although no info as to how is increases) as the enemies get stronger 
+2.  Basically the entire time the fighting between the user's character and the enemy is assumed you are aware of what is happening and nothing is explained 
+  - no information as to how the user picks their character, when the computer sends out more enemies, how the enemies gain strength, how the users fight the enemies
+  - also no information about how the user gets achievements, what they are, how they are earned, and how they are used 
+3.  character's skills > character's score > enemies' strength > upgradable ability 
+4.  
