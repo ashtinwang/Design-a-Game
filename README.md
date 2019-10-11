@@ -45,3 +45,7 @@ Reflected projectiles faster and stronger
 Right Upgrade Tree - Unlock katana dash
 Dash inflicts a Damage over Time effect
 Dash goes further and does more damage
+
+
+
+Also Achievments when player accomplishes a certain thing
