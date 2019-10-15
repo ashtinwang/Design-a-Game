@@ -14,4 +14,26 @@
   - no information as to how the user picks their character, when the computer sends out more enemies, how the enemies gain strength, how the users fight the enemies
   - also no information about how the user gets achievements, what they are, how they are earned, and how they are used 
 3.  character's skills > character's score > enemies' strength > upgradable ability 
-4.  
+4.  Coding the character's skills will be the hardest part along with how the character's visually portray their skills 
+  - also, with so little information, coding the possible character's to chose from will be challenging 
+  - there is basically no design, so there is very little information to code off of and I think that will take time to sort out 
+  - the controls are also changable with each player, which may be hard to give the user options for controls 
+  
+5.  Variables: 
+    - attack level --> local 
+    - defense level --> local 
+    - hp --> local 
+    - character special skills --> global 
+    - user controls --> local? 
+    - enemy strength --> local 
+    - number of enemies --> local
+    - time --> local 
+    - achievements --> global 
+    - characters --> global 
+       - characters should be an arraylist of arraylists 
+         - bc there are tons of characters (?) and each character has attributes 
+            - their skills, their attack level, defense level, etc. 
+ 6. enemy strength should be increased as the character is defeating enemies
+    
+    
+  
