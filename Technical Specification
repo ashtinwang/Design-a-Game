@@ -33,7 +33,7 @@
        - characters should be an arraylist of arraylists 
          - bc there are tons of characters (?) and each character has attributes 
             - their skills, their attack level, defense level, etc. 
- 6. enemy strength should be increased as the character is defeating enemies
+ 6. enemy strength should be increased as the character is defeating enemies.  As the number of enemies defeated increases the number of enemies released should be increased.  User controls should call special skills that the character can do.  
     
     
   
