@@ -6,8 +6,8 @@ var GAME = {
   started : true,
   level : 1
 };
-var PLAYER_1 = {
-  initialized = false,
-  x: 50,
-  y: 450
+
+var Player_1 = {
+  x: 25,
+  y: 200
 };
