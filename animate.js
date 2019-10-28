@@ -23,8 +23,8 @@ function player1Jump(){
    Player_1.previousY=-1;
  }
  Player_1.y += Player_1.velocityY;
- if (Player_1.y > GAME.canvas.height-25){
-   Player_1.y = GAME.canvas.height-25;
+ if (Player_1.y > GAME.canvas.height-Player_1.height){
+   Player_1.y = GAME.canvas.height-Player_1.height;
    Player_1.velocityY=0;
  }
  if (Player_1.y < 0){
@@ -48,8 +48,16 @@ function player1Left(){
   Player_1.x=0;
   }
 }
-
+function player1Crouching(){
+  if (CONTROLS.player1.down==true){
+    Player_1.height=(Player_1.fixedHeight/2);
+    Player_1.y+=Player_1.height;
+  }else{
+    Player_1.height=Player_1.fixedHeight;
+  }
+}
 function handlePlayer1Movement(){
+  player1Crouching();
   player1Jump();
   player1Right();
   player1Left();
