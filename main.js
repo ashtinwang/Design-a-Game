@@ -1,3 +1,3 @@
 function Start(){
-  initializeNerd();
+  initializePlayer_1();
 }
