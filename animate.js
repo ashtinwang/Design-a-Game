@@ -39,12 +39,20 @@ function player1Right(){
 if (Player_1.x>=GAME.canvas.width-Player_1.width){
   Player_1.x=GAME.canvas.width-Player_1.width;
 }
+}
 function player1Left(){
+  if (CONTROLS.player1.left==true){
+    Player_1.x-=(Player_1.velocityX*Player_1.accelerationX);
+  }
+  if (Player_1.x<0){
+  Player_1.x=0;
+  }
 }
-}
+
 function handlePlayer1Movement(){
   player1Jump();
   player1Right();
+  player1Left();
 }
 
 function runGame(){
