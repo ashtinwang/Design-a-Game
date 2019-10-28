@@ -5,7 +5,8 @@ var GAME = {
   },
   started : true,
   level : 1,
-  frameCounter:0
+  frameCounter:0,
+  screen: "home"
 };
 
 var Player_1 = {

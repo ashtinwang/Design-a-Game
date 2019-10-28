@@ -1,3 +1,3 @@
 function Start(){
-  initializePlayer_1();
+  runHomeScreen();
 }

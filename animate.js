@@ -79,5 +79,4 @@ if(GAME.frameCounter>13){
   GAME.frameCounter=0;
 }
 }
-
 window.requestAnimationFrame(runGame);
