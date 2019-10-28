@@ -4,26 +4,32 @@ var GAME = {
     height : 300
   },
   started : true,
-  level : 1
+  level : 1,
+  frameCounter:0
 };
 
 var Player_1 = {
   x: 25,
   y: 200,
+  height: 25,
+  width: 25,
+  aerial: false,
   jumpCount: 2,
   previousY: 200,
   previousY2: 2001,
   previousY3: 2002,
   percent: 0,
-  velocity : 0,
-  acceleration : 0.5,
+  velocityY : 0,
+  velocityX : 5,
+  accelerationY : 0.5,
+  accelerationX : 1,
   jump: -10.5,
   up: "w",
   left: "a",
   down: "s",
   right: "d",
-  attack: "p",
-  special: "d",
+  attack: "e",
+  special: "r",
   grab: "u",
   taunt: "1",
   shield: "i",
