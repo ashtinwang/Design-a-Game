@@ -1,6 +1,7 @@
 function initializePlayer_1(){
 
 }
+
 function renderPlayer1(context){
   var canvas = document.getElementsByClassName('canvas');
   handlePlayer1Movement();
@@ -64,19 +65,19 @@ function handlePlayer1Movement(){
 }
 
 function runGame(){
+  changeTapJump();
   var canvas = document.getElementById('mainCanvas');
 var context = canvas.getContext('2d');
 if (GAME.started) {
-  context.clearRect(0, 0, 600, 300);
+  context.clearRect(0, 0, 900, 450);
 renderPlayer1(context);
-}else{
-  context.font = "30px Arial";
-  context.fillText("Game Over      Level " + GAME.level, 135, 200);
 }
 window.requestAnimationFrame(runGame);
+if (CONTROLS.player1.special){
 GAME.frameCounter +=1;
 if(GAME.frameCounter>13){
   GAME.frameCounter=0;
+}
 }
 }
 window.requestAnimationFrame(runGame);

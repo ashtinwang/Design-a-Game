@@ -1,15 +1,17 @@
 var GAME = {
   canvas : {
-    width : 600,
-    height : 300
+    width : 900,
+    height : 450
   },
   started : true,
   level : 1,
   frameCounter:0,
-  screen: "home"
 };
 
 var Player_1 = {
+  health: 100,
+  attack: 15,
+  defense:5,
   x: 25,
   y: 200,
   height: 25,
@@ -22,10 +24,10 @@ var Player_1 = {
   previousY3: 2002,
   percent: 0,
   velocityY : 0,
-  velocityX : 15,
-  accelerationY : 0.5,
-  accelerationX : 1,
-  jump: -10.5,
+  velocityX : 5,
+  accelerationY : 0.2,
+  accelerationX : 0.7,
+  jump: -7.5,
   up: "w",
   left: "a",
   down: "s",
@@ -41,6 +43,5 @@ var Player_1 = {
   cDown: ".",
   cRight: "m",
   tapJump : " ",
-  autoDash: false,
   direction:"right"
 };
