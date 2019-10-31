@@ -65,7 +65,7 @@ function handlePlayer1Movement(){
 }
 
 function runGame(){
-  changeTapJump();
+  changeControls();
   var canvas = document.getElementById('mainCanvas');
 var context = canvas.getContext('2d');
 if (GAME.started) {
