@@ -19,8 +19,11 @@ encouraged by game
 
 Singleplayer mode:
 Computer sends waves of fodder enemies that slowly get stronger and more numerous
+
 See how far player can get
+
 Score mechanic: 1 point per enemy, scaling with each level (+1)
+
 each enemy gets a stat boost each advance in level (+sqrt(level))
 
 Enemies:
