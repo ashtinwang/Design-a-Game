@@ -1,0 +1,7 @@
+ Additional Tech Spec:
+ - Can use draw function to overlay health below screen, just display numerical value
+ - use random function to determine places to draw platforms on screen
+ - no need to implement any screen moving, as it is static
+ - each player move extends the area that the player occupies. If enemy area and player area overlap, subtract from health counter
+ - recognizes which button is being pressed down to figure out which health to subtract from
+ - 
