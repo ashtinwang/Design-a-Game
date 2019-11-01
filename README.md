@@ -1,14 +1,30 @@
 # Design-a-Game
 Planning for a game
+ 
+Ninja Fighting Game
+  Game is a static screen side view
+  randomly generated platforms set the stage per level
+  GUI at bottom of the screen displays player health
+      design choice to not show enemy health, goes with the mysterious ninja aesthetic
+      upgrades only displayed in shop
+      
+Bonus Experimental Feature:
+player can use ingenuity to distract 2nd player and activate console to edit own stats
+  encouraged by game
+
 Singleplayer mode:
 Computer sends waves of fodder enemies that slowly get stronger and more numerous
 See how far player can get
-Score mechanic (rough): 1 point per fodder enemy, scaling with enemy difficulty
+Score mechanic: 1 point per enemy, scaling with each level (+1)
+each enemy gets a stat boost each advance in level (+sqrt(level))
+
+Enemies:
+the player ninja model but different color
 
 Multiplayer Modes:
 
 Waves:
-P2 can join in on the wave fighting, but enemies are slightly stronger
+P2 can join in on the wave fighting, but enemies are slightly stronger (scaling +sqrt(level+0.2) stats per level)
 
 PVP:
 Each chooses a character in a series of rounds, picking upgrades from the shop after each round and counter picking
@@ -46,6 +62,3 @@ Right Upgrade Tree - Unlock katana dash
 Dash inflicts a Damage over Time effect
 Dash goes further and does more damage
 
-
-
-Also Achievments when player accomplishes a certain thing
