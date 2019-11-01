@@ -1,7 +1,7 @@
 12 Day Plan
 
 
-Day 1-5: 
+Day 1-5:
 create player character with movement left, right, jump, and crouch (use translation in direction of movement)
 - mutable controls
 - functions called to move
