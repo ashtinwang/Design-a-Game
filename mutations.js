@@ -4,6 +4,12 @@ function addHealth(damage){
 function addDefense(defUp){
   Player_1.defense+=defUp;
 }
+function addSpeed(xVel){
+  Player_1.accelerationX+=xVel;
+}
+function increaseJumpHeight(yVel){
+  Player_1.jump-=yVel;
+}
 function changeTapJump(){
   var tapJump = document.getElementById('jump').value;
   if (tapJump.length>1){
