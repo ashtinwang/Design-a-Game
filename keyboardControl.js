@@ -61,7 +61,7 @@ document.addEventListener('keydown', function(event){
     if(Player_1.aerial && CONTROLS.player1.attack){
       CONTROLS.player1.aerialForward=true;
     }else if(CONTROLS.player1.attack){
-      CONTROLS.player1.cLeft=true;
+CONTROLS.player1.cLeft=true;
     }else if (CONTROLS.player1.special){
       CONTROLS.player1.specialLeft=true;
     }else{
@@ -96,6 +96,7 @@ document.addEventListener('keydown', function(event){
     case Player_1.attack:
     CONTROLS.player1.attack=true;
   }
+
 });
 
 document.addEventListener('keyup', function (event){

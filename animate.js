@@ -1,6 +1,11 @@
-function initializePlayer_1(){
-
+function renderEnemy(context){
+  var canvas = document.getElementsByClassName('canvas');
+  handleEnemyMovement();
+  var ninjaImage = new Image();
+  ninjaImage.src = 'ninja2.PNG';
+  context.drawImage(ninjaImage, Enemy.x, Enemy.y, Enemy.width, Enemy.height);
 }
+
 function renderPlayer1(context){
   var canvas = document.getElementsByClassName('canvas');
   handlePlayer1Movement();

@@ -45,3 +45,23 @@ var Player_1 = {
   tapJump : " ",
   direction:"right"
 };
+
+var Enemy = {
+  health: 3,
+  attack: 2,
+  defense:1,
+  height: 25,
+  fixedHeight: 25,
+  width: 25,
+  aerial: false,
+  jumpCount: 2,
+  previousY: 200,
+  previousY2: 2001,
+  previousY3: 2002,
+  percent: 0,
+  velocityY : 0,
+  velocityX : 5,
+  accelerationY : 0.2,
+  accelerationX : 0.7,
+  jump: -5.5,
+};
