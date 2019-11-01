@@ -1,7 +1,6 @@
 function initializePlayer_1(){
 
 }
-
 function renderPlayer1(context){
   var canvas = document.getElementsByClassName('canvas');
   handlePlayer1Movement();
@@ -35,6 +34,7 @@ function player1Jump(){
 }
 function player1Right(){
   if (CONTROLS.player1.right==true){
+    Player_1.direction=1;
     Player_1.x+=(Player_1.velocityX*Player_1.accelerationX);
   }
 if (Player_1.x>=GAME.canvas.width-Player_1.width){
@@ -43,6 +43,7 @@ if (Player_1.x>=GAME.canvas.width-Player_1.width){
 }
 function player1Left(){
   if (CONTROLS.player1.left==true){
+    Player_1.direction=-1;
     Player_1.x-=(Player_1.velocityX*Player_1.accelerationX);
   }
   if (Player_1.x<0){
@@ -63,7 +64,7 @@ function handlePlayer1Movement(){
   player1Right();
   player1Left();
 }
-
+//frameCounter is for use of the special attack as laid out in controls
 function runGame(){
   changeControls();
   var canvas = document.getElementById('mainCanvas');

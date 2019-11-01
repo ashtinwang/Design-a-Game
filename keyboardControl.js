@@ -39,7 +39,7 @@ var CONTROLS = {
     specialDown: false
   }
 };
-
+//listens to every key pressed, if a key lisred in the config file for the player is pressed, the corresponding control value is set to true and released when the action is performed or the button released
 document.addEventListener('keydown', function(event){
   switch(event.key){
     case Player_1.tapJump:

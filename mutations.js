@@ -1,3 +1,4 @@
+//all the add$ functions add the value in parenthesis to the corresponding Player_1.$ value
 function addHealth(damage){
   Player_1.health+=damage;
 }
@@ -7,9 +8,10 @@ function addDefense(defUp){
 function addSpeed(xVel){
   Player_1.accelerationX+=xVel;
 }
-function increaseJumpHeight(yVel){
+function addJumpHeight(yVel){
   Player_1.jump-=yVel;
 }
+//all the change$ functions change the value for Player_1.$ with whatver value is in the corresponding box
 function changeTapJump(){
   var tapJump = document.getElementById('jump').value;
   if (tapJump.length>1){
@@ -138,6 +140,7 @@ Player_1.cLeft='n';
   Player_1.cLeft= cLeft;
 }
 }
+//calls all previoulsy defined changeControls
 function changeControls(){
   changeTapJump();
   changeUp();
