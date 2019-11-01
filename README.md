@@ -1,7 +1,7 @@
 # Design-a-Game
 Planning for a game
  
-Ninja Fighting Game
+Ninja Fighting Game:
   Game is a static screen side view
   randomly generated platforms set the stage per level
   GUI at bottom of the screen displays player health
