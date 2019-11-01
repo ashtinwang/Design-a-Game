@@ -2,15 +2,15 @@
 Planning for a game
  
 Ninja Fighting Game:
-  Game is a static screen side view
-  randomly generated platforms set the stage per level
-  GUI at bottom of the screen displays player health
-      design choice to not show enemy health, goes with the mysterious ninja aesthetic
-      upgrades only displayed in shop
+Game is a static screen side view
+randomly generated platforms set the stage per level
+GUI at bottom of the screen displays player health
+design choice to not show enemy health, goes with the mysterious ninja aesthetic
+upgrades only displayed in shop
       
 Bonus Experimental Feature:
 player can use ingenuity to distract 2nd player and activate console to edit own stats
-  encouraged by game
+encouraged by game
 
 Singleplayer mode:
 Computer sends waves of fodder enemies that slowly get stronger and more numerous
