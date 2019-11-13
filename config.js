@@ -38,18 +38,16 @@ var Player_1 = {
   taunt: "1",
   shield: "i",
   dash: "j",
-  cUp: "k",
-  cLeft: "N",
-  cDown: ".",
-  cRight: "m",
   tapJump : " ",
   direction:"right"
 };
 
-var Enemy = {
-  health: 3,
-  attack: 2,
-  defense:1,
+var Player_2 = {
+  health: 100,
+  attack: 15,
+  defense:5,
+  x: 200,
+  y: 200,
   height: 25,
   fixedHeight: 25,
   width: 25,
@@ -63,5 +61,17 @@ var Enemy = {
   velocityX : 5,
   accelerationY : 0.2,
   accelerationX : 0.7,
-  jump: -5.5,
+  jump: -7.5,
+  up: "w",
+  left: "ArrowLeft",
+  down: "ArrowDown",
+  right: "ArrowRight",
+  attack: "e",
+  special: "r",
+  grab: "u",
+  taunt: "1",
+  shield: "i",
+  dash: "j",
+  tapJump : "ArrowUp",
+  direction:"left"
 };
