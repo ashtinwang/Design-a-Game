@@ -84,42 +84,42 @@ document.addEventListener('keydown', function(event) {
       break;
     case Player_2.left:
       if (Player_2.aerial && CONTROLS.player2.attack) {
-        CONTROLS.Player2.aerialForward = true;
-      } else if (CONTROLS.Player2.attack) {
-        CONTROLS.Player2.cLeft = true;
-      } else if (CONTROLS.Player2.special) {
-        CONTROLS.Player2.specialLeft = true;
+        CONTROLS.player2.aerialForward = true;
+      } else if (CONTROLS.player2.attack) {
+        CONTROLS.player2.cLeft = true;
+      } else if (CONTROLS.player2.special) {
+        CONTROLS.player2.specialLeft = true;
       } else {
-        CONTROLS.Player2.left = true;
+        CONTROLS.player2.left = true;
       }
       break;
     case Player_2.up:
       if (Player_2.aerial && CONTROLS.Player2.attack) {
-        CONTROLS.Player2.aerialForward = true;
-      } else if (CONTROLS.Player2.attack) {
-        CONTROLS.Player2.cUp = true;
-      } else if (CONTROLS.Player2.special) {
-        CONTROLS.Player2.specialUp = true;
+        CONTROLS.player2.aerialForward = true;
+      } else if (CONTROLS.player2.attack) {
+        CONTROLS.player2.cUp = true;
+      } else if (CONTROLS.player2.special) {
+        CONTROLS.player2.specialUp = true;
       } else {
-        CONTROLS.Player2.up = true;
+        CONTROLS.player2.up = true;
       }
       break;
     case Player_2.down:
-      if (Player_2.aerial && CONTROLS.Player2.attack) {
-        CONTROLS.Player2.aerialForward = true;
-      } else if (CONTROLS.Player2.attack) {
-        CONTROLS.Player2.cDown = true;
-      } else if (CONTROLS.Player2.special) {
-        CONTROLS.Player2.specialDown = true;
+      if (Player_2.aerial && CONTROLS.player2.attack) {
+        CONTROLS.player2.aerialForward = true;
+      } else if (CONTROLS.player2.attack) {
+        CONTROLS.player2.cDown = true;
+      } else if (CONTROLS.player2.special) {
+        CONTROLS.player2.specialDown = true;
       } else {
-        CONTROLS.Player2.down = true;
+        CONTROLS.player2.down = true;
       }
       break;
     case Player_2.special:
-      CONTROLS.Player2.special = true;
+      CONTROLS.player2.special = true;
       break;
     case Player_2.attack:
-      CONTROLS.Player2.attack = true;
+      CONTROLS.player2.attack = true;
   }
 });
 

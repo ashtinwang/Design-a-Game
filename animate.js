@@ -58,11 +58,8 @@ function player1Right() {
 }
 
 function player1Left() {
-  if (CONTROLS.player1.left == true) {
+  if (CONTROLS.player1.left == true && Player_1.x > 0) {
     Player_1.x -= (Player_1.velocityX * Player_1.accelerationX);
-  }
-  if (Player_1.x < 0) {
-    Player_1.x = 0;
   }
 }
 
@@ -109,11 +106,8 @@ function player2Right() {
 }
 
 function player2Left() {
-  if (CONTROLS.player2.left == true) {
+  if (CONTROLS.player2.left == true && Player_2.x > 0) {
     Player_2.x -= (Player_2.velocityX * Player_2.accelerationX);
-  }
-  if (Player_2.x < 0) {
-    Player_2.x = 0;
   }
 }
 
