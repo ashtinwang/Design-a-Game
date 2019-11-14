@@ -1,26 +1,21 @@
-
 function renderPlayer1(context) {
   var canvas = document.getElementsByClassName('canvas');
   handlePlayer1Movement();
-  var ninjaImage = new Image();
 
-  ninjaImage.src = 'ninja1.PNG';
-  if (CONTROLS.player1.attack) {
-    ninjaImage.src = 'ninjakick.PNG';
-  }
-  context.drawImage(ninjaImage, Player_1.x, Player_1.y, Player_1.width, Player_1.height);
+  var ninja1Image = new Image();
+  ninja1Image.src = Player_1.src;
+
+  context.drawImage(ninja1Image, Player_1.x, Player_1.y, Player_1.width, Player_1.height);
 }
 
 function renderPlayer2(context) {
   var canvas = document.getElementsByClassName('canvas');
   handlePlayer2Movement();
-  var ninjaImage = new Image();
 
-  ninjaImage.src = 'ninja2.PNG';
-  if (CONTROLS.player2.attack) {
-    ninjaImage.src = 'ninjakick.PNG';
-  }
-  context.drawImage(ninjaImage, Player_2.x, Player_2.y, Player_2.width, Player_2.height);
+  var ninja2Image = new Image();
+  ninja2Image.src = Player_2.src;
+
+  context.drawImage(ninja2Image, Player_2.x, Player_2.y, Player_2.width, Player_2.height);
 }
 
 //change the GAME.canvas.height-player hieght to check if on a platform
@@ -49,28 +44,42 @@ function player1Jump() {
 }
 
 function player1Right() {
-  if (CONTROLS.player1.right == true) {
+  if (CONTROLS.player1.right == true && Player_1.x <= (GAME.canvas.width-Player_1.width)) {
     Player_1.x += (Player_1.velocityX * Player_1.accelerationX);
-  }
-  if (Player_1.x >= GAME.canvas.width - Player_1.width) {
-    Player_1.x = GAME.canvas.width - Player_1.width;
+    Player_1.last = "right";
   }
 }
 
 function player1Left() {
   if (CONTROLS.player1.left == true && Player_1.x > 0) {
     Player_1.x -= (Player_1.velocityX * Player_1.accelerationX);
+    Player_1.last = "left";
   }
 }
 
 function player1Crouching() {
   if (CONTROLS.player1.down == true) {
-    Player_1.height = (Player_1.fixedHeight / 2);
+    Player_1.height = (Player_1.fixedHeight / 1.25);
     Player_1.y += Player_1.height;
   } else {
     Player_1.height = Player_1.fixedHeight;
   }
 }
+
+function player1Attack(){
+  if (CONTROLS.player1.attack) {
+    if(Player_1.last == "right"){
+      Player_1.src = "ninja1KickRight.png";
+    }
+    else if(Player_1.last == "left"){
+      Player_1.src = "ninja1KickLeft.png";
+    }
+  } else {
+    Player_1.src = "ninja1.png";
+  }
+}
+
+///////////////////////////
 
 function player2Jump() {
   if (Player_2.y == GAME.canvas.height - Player_2.height && Player_2.y != 0) {
@@ -97,26 +106,39 @@ function player2Jump() {
 }
 
 function player2Right() {
-  if (CONTROLS.player2.right == true) {
+  if (CONTROLS.player2.right == true && Player_2.x <= (GAME.canvas.width-Player_2.width)) {
     Player_2.x += (Player_2.velocityX * Player_2.accelerationX);
   }
-  if (Player_2.x >= GAME.canvas.width - Player_2.width) {
-    Player_2.x = GAME.canvas.width - Player_2.width;
-  }
+  Player_2.last = "right";
 }
 
 function player2Left() {
   if (CONTROLS.player2.left == true && Player_2.x > 0) {
     Player_2.x -= (Player_2.velocityX * Player_2.accelerationX);
+    Player_2.last = "left";
   }
+
 }
 
 function player2Crouching() {
   if (CONTROLS.player2.down == true) {
-    Player_2.height = (Player_2.fixedHeight / 2);
+    Player_2.height = (Player_2.fixedHeight / 1.25);
     Player_2.y += Player_2.height;
   } else {
     Player_2.height = Player_2.fixedHeight;
+  }
+}
+
+function player2Attack(){
+  if (CONTROLS.player2.attack) {
+    if(Player_2.last == "right"){
+      Player_2.src = "ninja2KickRight.png";
+    } else if(Player_2.last == "left"){
+      Player_2.src = "ninja2KickLeft.png";
+    }
+  }
+  else{
+    Player_2.src = "ninja2.png";
   }
 }
 
@@ -125,6 +147,7 @@ function handlePlayer1Movement() {
   player1Jump();
   player1Right();
   player1Left();
+  player1Attack();
 }
 
 function handlePlayer2Movement() {
@@ -132,6 +155,7 @@ function handlePlayer2Movement() {
   player2Jump();
   player2Right();
   player2Left();
+  player2Attack();
 }
 
 function runGame() {
