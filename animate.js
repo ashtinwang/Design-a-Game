@@ -137,10 +137,11 @@ function player2Attack(){
       Player_2.src = "ninja2KickLeft.png";
     }
   }
-  else{
-    Player_2.src = "ninja2.png";
+    else{
+      Player_2.src = "ninja2.png";
+    }
+    //handle collision
   }
-}
 
 function handlePlayer1Movement() {
   player1Crouching();
