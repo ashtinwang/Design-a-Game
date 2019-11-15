@@ -1,5 +1,5 @@
-function addHealth(damage){
-  Player_1.health+=damage;
+function modHealth(value){
+  Player_1.health+=value;
 }
 function addDefense(defUp){
   Player_1.defense+=defUp;
@@ -140,8 +140,8 @@ function changeControls(){
   changeRight();
 }
 
-function addHealth2(damage){
-  Player_2.health+=damage;
+function modHealth2(value){
+  Player_2.health+=value;
 }
 function addDefense2(defUp){
   Player_2.defense+=defUp;
