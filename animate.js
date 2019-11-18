@@ -67,20 +67,24 @@ function player1Crouching() {
 }
 
 function player1Attack(){
-    var landed = false;
+  var landed = false;
+
   if (CONTROLS.player1.attack) {
     //Change sprite
 
-
-    if(Player_1.last == "right"){
+    //Right Kick
+    if(Player_2.x + (Player_2.width/2) >= Player_1.x + (Player_1.width/2)){
       Player_1.src = "ninja1KickRight.png";
+      //Hitboxes
       if((Player_1.x + Player_1.width) >= Player_2.x && (Player_1.x + Player_1.width) <= (Player_2.x + Player_2.width/2)){
         landed = true;
       }
     }
-    if(Player_1.last == "left"){
+    //Left Kick
+    if((Player_2.x + (Player_2.width / 2)) <= Player_1.x + (Player_1.width/2)){
       Player_1.src = "ninja1KickLeft.png";
-      if(Player_1.x >= (Player_2.x + Player_2.width / 2) && Player_1.x < (Player_2.x + Player_2.width)){
+      //Hitboxes
+      if(Player_1.x >= (Player_2.x + (Player_2.width / 2)) && Player_1.x < (Player_2.x + Player_2.width)){
         landed = true;
       }
     }
@@ -100,9 +104,11 @@ function player1Attack(){
         Player_2.velocityX = -5;
       }
     }
-  } else {
-    Player_1.src = "ninja1.png";
   }
+  else{
+
+    Player_1.src = "ninja1.png";}
+
 }
 ///////////////////////////
 
@@ -155,18 +161,49 @@ function player2Crouching() {
 }
 
 function player2Attack(){
+  var landed2 = false;
+
   if (CONTROLS.player2.attack) {
-    if(Player_2.last == "right"){
+    //Change sprite
+
+    //Right Kick
+    if(Player_1.x + (Player_1.width/2) >= Player_2.x + (Player_2.width/2)){
       Player_2.src = "ninja2KickRight.png";
-    } else if(Player_2.last == "left"){
+      //Hitboxes
+      if((Player_2.x + Player_2.width) >= Player_1.x && (Player_2.x + Player_2.width) <= (Player_1.x + Player_1.width/2)){
+        landed = true;
+      }
+    }
+    //Left Kick
+    if((Player_1.x + (Player_1.width / 2)) <= Player_2.x + (Player_2.width/2)){
       Player_2.src = "ninja2KickLeft.png";
+      //Hitboxes
+      if(Player_2.x >= (Player_1.x + (Player_1.width / 2)) && Player_2.x <= (Player_1.x + Player_1.width)){
+        landed2 = true;
+      }
+    }
+
+    //Did the attack land?
+
+    if(landed2)
+    {
+      console.log("ATTACKED!");
+      //modify health first
+      modHealth2(Player_2.attack - Player_1.defense);
+      //handle knockback
+      if(Player_2.src = "ninja2KickRight.png"){
+        Player_1.velocityX = 5;
+      }
+      else if(Player_2.src = "ninja2KickLeft.png"){
+        Player_1.velocityX = -5;
+      }
     }
   }
-    else{
-      Player_2.src = "ninja2.png";
-    }
-    //handle collision
-  }
+  else{
+
+    Player_2.src = "ninja2.png";}
+
+}
 
 function handlePlayer1Movement() {
   player1Crouching();
