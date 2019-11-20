@@ -55,7 +55,7 @@ function player1Left() {
 }
 function player1Crouching() {
   if (CONTROLS.player1.down == true) {
-    Player_1.height = (Player_1.fixedHeight / 1.25);
+    Player_1.height = (Player_1.fixedHeight / 1.75);
     Player_1.y += Player_1.height;
   } else {
     Player_1.height = Player_1.fixedHeight;
