@@ -41,7 +41,6 @@ function player1Jump() {
   }
   CONTROLS.player1.jump = false;
 }
-
 function player1Right() {
   if (CONTROLS.player1.right == true && Player_1.x <= (GAME.canvas.width-Player_1.width)) {
     Player_1.x += (Player_1.velocityX * Player_1.accelerationX);
