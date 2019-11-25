@@ -84,10 +84,10 @@ function player1Attack() {
     Player_1.src = "ninja1.PNG";
   }
   //decides if attack lands
-  if (CONTROLS.player1.attack && (Player_1.x + Player_1.width / 2) <= Player_2.x && (Player_1.x + Player_1.width) >= (Player_2.x + Player_2.width / 2) && Player_1.atkCool ==0) {
+  if (CONTROLS.player1.attack && (Player_1.x + Player_1.width / 2) <= Player_2.x && (Player_1.x + Player_1.width) >= (Player_2.x + Player_2.width / 2) && Player_1.atkCool ==0 && Player_2.y>=Player_1.y && Player_2.y +Player_2.height<=Player_1.y) {
     landed = true;
   }
-  if (CONTROLS.player1.attack && (Player_1.x - Player_1.width / 2) <= (Player_2.x + (Player_2.width / 2)) && (Player_1.x - Player_1.width / 2) >= Player_2.x && Player_1.atkCool ==0) {
+  if (CONTROLS.player1.attack && (Player_1.x - Player_1.width / 2) <= (Player_2.x + (Player_2.width / 2)) && (Player_1.x - Player_1.width / 2) >= Player_2.x && Player_1.atkCool ==0  && Player_2.y>=Player_1.y && Player_2.y +Player_2.height<=Player_1.y) {
     landed = true;
   }
   //if yes then this
@@ -168,10 +168,10 @@ function player2Attack() {
     Player_2.src = "ninja2.PNG";
   }
 //decides if attack lands
-  if (CONTROLS.player2.attack && (Player_2.x + Player_2.width / 2) <= Player_1.x && (Player_2.x + Player_2.width) >= (Player_1.x + Player_1.width / 2) && Player_2.atkCool ==0) {
+  if (CONTROLS.player2.attack && (Player_2.x + Player_2.width / 2) <= Player_1.x && (Player_2.x + Player_2.width) >= (Player_1.x + Player_1.width / 2) && Player_2.atkCool ==0 && Player_1.y>=Player_2.y && Player_1.y +Player_1.height<=Player_2.y) {
     landed2 = true;
   }
-  if (CONTROLS.player2.attack && (Player_2.x - Player_2.width / 2) <= (Player_1.x + (Player_1.width / 2)) && (Player_2.x - Player_2.width / 2) >= Player_1.x && Player_2.atkCool ==0) {
+  if (CONTROLS.player2.attack && (Player_2.x - Player_2.width / 2) <= (Player_1.x + (Player_1.width / 2)) && (Player_2.x - Player_2.width / 2) >= Player_1.x && Player_2.atkCool ==0 && Player_1.y>=Player_2.y && Player_1.y +Player_1.height<=Player_2.y) {
     landed2 = true;
   }
 //if yes then this
