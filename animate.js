@@ -7,6 +7,7 @@ function renderPlayer1(context) {
 
   context.drawImage(ninja1Image, Player_1.x, Player_1.y, Player_1.width, Player_1.height);
 }
+
 function renderPlayer2(context) {
   var canvas = document.getElementsByClassName('canvas');
   handlePlayer2Movement();
@@ -41,70 +42,73 @@ function player1Jump() {
   }
   CONTROLS.player1.jump = false;
 }
+
 function player1Right() {
-  if (CONTROLS.player1.right == true && Player_1.x <= (GAME.canvas.width-Player_1.width)) {
+  if (CONTROLS.player1.right == true && Player_1.x <= (GAME.canvas.width - Player_1.width)) {
     Player_1.x += (Player_1.velocityX * Player_1.accelerationX);
     Player_1.last = "right";
   }
 }
+
 function player1Left() {
   if (CONTROLS.player1.left == true && Player_1.x > 0) {
     Player_1.x -= (Player_1.velocityX * Player_1.accelerationX);
     Player_1.last = "left";
   }
 }
+
 function player1Crouching() {
   if (CONTROLS.player1.down == true) {
-    Player_1.height = (Player_1.fixedHeight / 1.75);
+    Player_1.height = (Player_1.fixedHeight / 1.25);
     Player_1.y += Player_1.height;
   } else {
     Player_1.height = Player_1.fixedHeight;
   }
 }
-function player1Attack(){
+
+function player1Attack() {
   var landed = false;
 
   if (CONTROLS.player1.attack) {
     //Change sprite
 
     //Right Kick
-    if(Player_1.x <= Player_2.x + Player_2.width/2){
+    if (Player_1.x <= Player_2.x + Player_2.width / 2) {
       Player_1.src = "ninja1KickRight.png";
       //Hitboxes
-      if((Player_1.x + Player_1.width) >= Player_2.x && (Player_1.x + Player_1.width) <= (Player_2.x + Player_2.width/2)){
+      if ((Player_1.x + Player_1.width) >= Player_2.x && (Player_1.x + Player_1.width) <= (Player_2.x + Player_2.width / 2)) {
         landed = true;
       }
     }
     //Left Kick
-    if(Player_1.x >= (Player_2.x + Player_2.width/2)){
+    if (Player_1.x >= (Player_2.x + Player_2.width / 2)) {
       Player_1.src = "ninja1KickLeft.png";
       //Hitboxes
-      if(Player_1.x >= (Player_2.x + (Player_2.width / 2)) && Player_1.x < (Player_2.x + Player_2.width)){
+      if (Player_1.x >= (Player_2.x + (Player_2.width / 2)) && Player_1.x < (Player_2.x + Player_2.width)) {
         landed = true;
       }
     }
-console.log(Player_1.x, Player_2.x + Player_2.width/2);
+    console.log(Player_1.x, Player_2.x + Player_2.width / 2);
     //Did the attack land?
 
-    if(landed)
-    {
-        console.log("Player1 Landed");
+    if (landed) {
+      console.log("Player1 Landed");
       //modify health first
-      modHealth2(Player_1.attack - Player_2.defense);
+      modHealth(Player_1.attack);
       //handle knockback
-      if(Player_1.src = "ninja1KickRight.png"){
+      if (Player_1.src = "ninja1KickRight.png") {
         Player_2.velocityX = 5;
-      }
-      else if(Player_1.src = "ninja1KickLeft.png"){
+      } else if (Player_1.src = "ninja1KickLeft.png") {
         Player_2.velocityX = -5;
       }
     }
-  }
-  else{
+  } else {
 
-    Player_1.src = "ninja1.png";}
+    Player_1.src = "ninja1.png";
+  }
 
 }
+
 ///////////////////////////
 
 function player2Jump() {
@@ -130,19 +134,21 @@ function player2Jump() {
   }
   CONTROLS.player2.jump = false;
 }
+
 function player2Right() {
-  if (CONTROLS.player2.right == true && Player_2.x <= (GAME.canvas.width-Player_2.width)) {
+  if (CONTROLS.player2.right == true && Player_2.x <= (GAME.canvas.width - Player_2.width)) {
     Player_2.x += (Player_2.velocityX * Player_2.accelerationX);
   }
   Player_2.last = "right";
 }
+
 function player2Left() {
   if (CONTROLS.player2.left == true && Player_2.x > 0) {
     Player_2.x -= (Player_2.velocityX * Player_2.accelerationX);
     Player_2.last = "left";
   }
-
 }
+
 function player2Crouching() {
   if (CONTROLS.player2.down == true) {
     Player_2.height = (Player_2.fixedHeight / 1.25);
@@ -151,48 +157,47 @@ function player2Crouching() {
     Player_2.height = Player_2.fixedHeight;
   }
 }
-function player2Attack(){
+
+function player2Attack() {
   var landed2 = false;
 
   if (CONTROLS.player2.attack) {
     //Change sprite
 
     //Right Kick
-    if(Player_1.x + (Player_1.width/2) >= Player_2.x + (Player_2.width/2)){
+    if (Player_1.x + (Player_1.width / 2) >= Player_2.x + (Player_2.width / 2)) {
       Player_2.src = "ninja2KickRight.png";
       //Hitboxes
-      if((Player_2.x + Player_2.width) >= Player_1.x && (Player_2.x + Player_2.width) <= (Player_1.x + Player_1.width/2)){
+      if ((Player_2.x + Player_2.width) >= Player_1.x && (Player_2.x + Player_2.width) <= (Player_1.x + Player_1.width / 2)) {
         landed = true;
       }
     }
     //Left Kick
-    if((Player_1.x + (Player_1.width / 2)) <= Player_2.x + (Player_2.width/2)){
+    if ((Player_1.x + (Player_1.width / 2)) <= Player_2.x + (Player_2.width / 2)) {
       Player_2.src = "ninja2KickLeft.png";
       //Hitboxes
-      if(Player_2.x >= (Player_1.x + (Player_1.width / 2)) && Player_2.x <= (Player_1.x + Player_1.width)){
+      if (Player_2.x >= (Player_1.x + (Player_1.width / 2)) && Player_2.x <= (Player_1.x + Player_1.width)) {
         landed2 = true;
       }
     }
 
     //Did the attack land?
 
-    if(landed2)
-    {
+    if (landed2) {
       console.log("Player2 Landed");
       //modify health first
-      modHealth2(Player_2.attack - Player_1.defense);
+      modHealth(Player_2.attack);
       //handle knockback
-      if(Player_2.src = "ninja2KickRight.png"){
+      if (Player_2.src = "ninja2KickRight.png") {
         Player_1.velocityX = 5;
-      }
-      else if(Player_2.src = "ninja2KickLeft.png"){
+      } else if (Player_2.src = "ninja2KickLeft.png") {
         Player_1.velocityX = -5;
       }
     }
-  }
-  else{
+  } else {
 
-    Player_2.src = "ninja2.png";}
+    Player_2.src = "ninja2.png";
+  }
 
 }
 
@@ -203,16 +208,17 @@ function handlePlayer1Movement() {
   player1Left();
   player1Attack();
 
-  if (Player_1.kBvelocityX > 0){
+  if (Player_1.kBvelocityX > 0) {
     Player_1.kBvelocityX--;
-    Player_1.x+=Player_1.kbVelocity;
+    Player_1.x += Player_1.kbVelocity;
   }
-  if (Player_1.kBvelocityX < 0){
+  if (Player_1.kBvelocityX < 0) {
     Player_1.kBvelocityX++;
-    Player_1.x-=Player_1.kbVelocity;
+    Player_1.x -= Player_1.kbVelocity;
 
   }
 }
+
 function handlePlayer2Movement() {
   player2Crouching();
   player2Jump();
@@ -220,10 +226,10 @@ function handlePlayer2Movement() {
   player2Left();
   player2Attack();
 
-  if (Player_2.kBvelocityX > 0){
+  if (Player_2.kBvelocityX > 0) {
     Player_2.kBvelocityX--;
   }
-  if (Player_2.kBvelocityX < 0){
+  if (Player_2.kBvelocityX < 0) {
     Player_2.kBvelocityX++;
   }
 }
@@ -234,8 +240,11 @@ function runGame() {
   var context = canvas.getContext('2d');
   if (GAME.started) {
     context.clearRect(0, 0, 900, 450);
+    context.font = "20px Arial";
     renderPlayer1(context);
     renderPlayer2(context);
+    context.fillText('Player 1 Health: ' + Player_1.health, 0, 20);
+    context.fillText('Player 2 Health: ' + Player_2.health, 715, 20);
   }
   window.requestAnimationFrame(runGame);
   if (CONTROLS.player1.special) {
