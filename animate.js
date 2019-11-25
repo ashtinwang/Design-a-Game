@@ -229,7 +229,7 @@ function runGame() {
   changeControls();
   var canvas = document.getElementById('mainCanvas');
   var context = canvas.getContext('2d');
-  if (GAME.started) {
+  if (GAME.started&&Player_1.health>0&&Player_2.health>0) {
     context.clearRect(0, 0, 900, 450);
     context.font = "20px Arial";
     renderPlayer1(context);
@@ -237,6 +237,7 @@ function runGame() {
     context.fillText('Player 1 Health: ' + Player_1.health, 0, 20);
     context.fillText('Player 2 Health: ' + Player_2.health, 690, 20);
   }
+  else{context.fillText("Game Over", 200, 100);}
   window.requestAnimationFrame(runGame);
   if (CONTROLS.player1.special) {
     GAME.frameCounter += 1;
