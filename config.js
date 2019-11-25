@@ -10,7 +10,7 @@ var GAME = {
 
 var Player_1 = {
   health: 100,
-  attack: 15,
+  attackVal: 15,
   defense:5,
   x: 50,
   y: 500,
@@ -47,7 +47,7 @@ var Player_1 = {
 
 var Player_2 = {
   health: 100,
-  attack: 15,
+  attackVal: 15,
   defense:5,
   x: 850,
   y: 500,

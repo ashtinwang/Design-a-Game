@@ -94,7 +94,7 @@ function player1Attack() {
     if (landed) {
       console.log("Player1 Landed");
       //modify health first
-      modHealth(Player_1.attack);
+      modHealth2(Player_1.attackVal);
       //handle knockback
       if (Player_1.src = "ninja1KickRight.png") {
         Player_2.velocityX = 5;
@@ -186,7 +186,7 @@ function player2Attack() {
     if (landed2) {
       console.log("Player2 Landed");
       //modify health first
-      modHealth(Player_2.attack);
+      modHealth(Player_2.attackVal);
       //handle knockback
       if (Player_2.src = "ninja2KickRight.png") {
         Player_1.velocityX = 5;
@@ -244,7 +244,7 @@ function runGame() {
     renderPlayer1(context);
     renderPlayer2(context);
     context.fillText('Player 1 Health: ' + Player_1.health, 0, 20);
-    context.fillText('Player 2 Health: ' + Player_2.health, 715, 20);
+    context.fillText('Player 2 Health: ' + Player_2.health, 690, 20);
   }
   window.requestAnimationFrame(runGame);
   if (CONTROLS.player1.special) {
