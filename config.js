@@ -13,7 +13,7 @@ var Player_1 = {
   attackVal: 15,
   defense:5,
   x: 50,
-  y: 500,
+  y: 450,
   last: "",
   height: 100,
   fixedHeight: 100,
@@ -42,7 +42,8 @@ var Player_1 = {
   shield: "i",
   dash: "j",
   tapJump : " ",
-  direction:"right"
+  direction:"right",
+  atkCool: 60
 };
 
 var Player_2 = {
@@ -50,7 +51,7 @@ var Player_2 = {
   attackVal: 15,
   defense:5,
   x: 850,
-  y: 500,
+  y: 450,
   last: "",
   height: 100,
   fixedHeight: 100,
@@ -79,5 +80,6 @@ var Player_2 = {
   shield: "i",
   dash: "j",
   tapJump : "ArrowUp",
-  direction:"left"
+  direction:"left",
+  atkCool: 60
 };

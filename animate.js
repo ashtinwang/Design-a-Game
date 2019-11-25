@@ -6,6 +6,7 @@ function renderPlayer1(context) {
   ninja1Image.src = Player_1.src;
 
   context.drawImage(ninja1Image, Player_1.x, Player_1.y, Player_1.width, Player_1.height);
+  Player_1.atkCool--;
 }
 
 function renderPlayer2(context) {
@@ -16,6 +17,7 @@ function renderPlayer2(context) {
   ninja2Image.src = Player_2.src;
 
   context.drawImage(ninja2Image, Player_2.x, Player_2.y, Player_2.width, Player_2.height);
+  Player_2.atkCool--;
 }
 
 //change the GAME.canvas.height-player hieght to check if on a platform
@@ -69,7 +71,7 @@ function player1Crouching() {
 function player1Attack() {
   var landed = false;
 
-  if (CONTROLS.player1.attack) {
+  if (CONTROLS.player1.attack && Player_1.atkCool == 0) {
     //Change sprite
 
     //Right Kick
@@ -96,12 +98,13 @@ function player1Attack() {
       //modify health first
       modHealth2(Player_1.attackVal);
       //handle knockback
-      if (Player_1.src = "ninja1KickRight.png") {
+      if (Player_1.src == "ninja1KickRight.png") {
         Player_2.velocityX = 5;
-      } else if (Player_1.src = "ninja1KickLeft.png") {
+      } else if (Player_1.src == "ninja1KickLeft.png") {
         Player_2.velocityX = -5;
       }
     }
+    Player_1.atkCool=60;
   } else {
 
     Player_1.src = "ninja1.png";
@@ -161,7 +164,7 @@ function player2Crouching() {
 function player2Attack() {
   var landed2 = false;
 
-  if (CONTROLS.player2.attack) {
+  if (CONTROLS.player2.attack && Player_2.atkCool == 0) {
     //Change sprite
 
     //Right Kick
@@ -188,12 +191,13 @@ function player2Attack() {
       //modify health first
       modHealth(Player_2.attackVal);
       //handle knockback
-      if (Player_2.src = "ninja2KickRight.png") {
+      if (Player_2.src == "ninja2KickRight.png") {
         Player_1.velocityX = 5;
-      } else if (Player_2.src = "ninja2KickLeft.png") {
+      } else if (Player_2.src == "ninja2KickLeft.png") {
         Player_1.velocityX = -5;
       }
     }
+    Player_2.atkCool = 60;
   } else {
 
     Player_2.src = "ninja2.png";
